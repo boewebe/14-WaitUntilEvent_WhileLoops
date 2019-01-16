@@ -38,10 +38,10 @@ import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    #run_test_sum_until_prime_input()
-    #run_test_next_prime()
+    run_test_sum_until_prime_input()
+    run_test_next_prime()
     run_test_prime_gap()
-    #run_test_wait_for_sum_of_cubes()
+    run_test_wait_for_sum_of_cubes()
 
 
 def is_prime(n):
@@ -345,16 +345,28 @@ def prime_gap(m):
     Type hints:
       :type m: int
     """
-    x = 1
+
+    x = 2
+    y = 0
     while True:
-        x = 
-        if next_prime(x) - x == m:
+        if next_prime(x) == x:
+            y = next_prime(x + 1)
+        if y - x >= m:
             break
-        x = next_prime(x)
+        x = next_prime(y)
     return x
 
+
+    #x = 3
+    #while True:
+    #    print(next_prime(x+1)-x)
+    #    if next_prime(x+1) - x == m:
+    #        break
+    #    x = next_prime(x+1)
+    #return x
+
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   The testing code is already written for you (above).
     #
     # IMPLEMENTATION REQUIREMENT:
